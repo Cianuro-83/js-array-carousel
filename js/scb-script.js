@@ -35,7 +35,8 @@ frecciaSnElement.addEventListener("click", function () {
   let prossimaFoto = fotoElements[indiceFotoSelected];
   prossimaFoto.classList.add("selected");
   console.log("prossima foto", indiceFotoSelected);
-  // if (indiceFotoSelected === 4) {
-
+  if (indiceFotoSelected === 0) {
+    indiceFotoSelected++;
+  }
   // fine frecciaSxElement.addEventListener
 });
