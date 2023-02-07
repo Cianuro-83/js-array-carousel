@@ -15,6 +15,8 @@ console.log(indiceFotoSelected);
 // scorri foto al click destro
 const fotoElements = document.getElementsByClassName("foto");
 console.log(fotoElements);
+// FRECCIA DX
+
 frecciaDxElement.addEventListener("click", function () {
   let fotoAttuale = fotoElements[indiceFotoSelected];
   fotoAttuale.classList.remove("selected");
@@ -22,11 +24,9 @@ frecciaDxElement.addEventListener("click", function () {
   let prossimaFoto = fotoElements[indiceFotoSelected];
   prossimaFoto.classList.add("selected");
   console.log("prossima foto", indiceFotoSelected);
-  if (indiceFotoSelected === 4) {
-    indiceFotoSelected--;
-  }
-  // fine frecciaDxElement.addEventListener
+  // CHIUSURA CLICK DX
 });
+// FRECCIA SN
 
 frecciaSnElement.addEventListener("click", function () {
   let fotoAttuale = fotoElements[indiceFotoSelected];
@@ -35,8 +35,5 @@ frecciaSnElement.addEventListener("click", function () {
   let prossimaFoto = fotoElements[indiceFotoSelected];
   prossimaFoto.classList.add("selected");
   console.log("prossima foto", indiceFotoSelected);
-  if (indiceFotoSelected === 0) {
-    indiceFotoSelected++;
-  }
-  // fine frecciaSxElement.addEventListener
+  // CHIUSURA CLICK SN
 });

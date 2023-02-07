@@ -29,7 +29,15 @@ img {
 
 .freccia-destra{
     right: 25px;
+    z-index: 999;
 }
 .freccia-sinistra{
     left: 25px;
+    z-index: 998;
 }
+#freccia-sinistra.stop, #freccia-destra.stop{
+ display: none;
+}
+#freccia-sinistra.go, #freccia-destra.go{
+  display: block;
+ }
