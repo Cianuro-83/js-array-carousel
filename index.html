@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAROSELLO IMMAGINI</title>
+    <title>Carosello Immagin</title>
     <!-- BOOTSTRAP 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" . . . .
-        . . . integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- FONTAWESOME FREE -->
@@ -20,34 +19,25 @@
 
 <body>
 
+
     <section class="py-5 justify-content-center">
         <h1 class="text-center text-warning text-uppercase mb-5">carosello immagini</h1>
-        <div class="container" id="carosello">
-            <div class="foto selected">
-                <img src="./img/img1.jpg" alt="paesaggi 1">
-            </div>
-            <div class="foto">
-                <img src="./img/img2.jpg" alt="paesaggi 2">
-            </div>
-            <div class="foto">
-                <img src="./img/img3.jpg" alt="paesaggi 3">
-            </div>
-            <div class="foto">
-                <img src="./img/img4.jpg" alt="paesaggi 4">
-            </div>
-            <div class="foto ultima-foto">
-                <img src="./img/img5.jpg" alt="paesaggi 5">
-            </div>
-            <div id="freccia-sinistra" class="naviga-carosello freccia-sinistra">
-                <i class="fa-solid fa-chevron-left"></i>
-            </div>
+        <div class="container">
+            <div id="carosello" class="carosello">
 
-            <div id="freccia-destra" class="naviga-carosello freccia-destra">
-                <i class="fa-solid fa-chevron-right"></i>
+
+                <div id="freccia-sn" class="freccia-carosello freccia-sn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+
+                <div id="freccia-dx" class="freccia-carosello freccia-dx">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
             </div>
         </div>
     </section>
-    <!-- BOOTSTRAP 5 JAVA SCRIPT -->
+
+    <!-- MY JAVA SCRIPT -->
     <script src="./js/scb-script.js"></script>
 </body>
 

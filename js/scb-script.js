@@ -1,73 +1,99 @@
-console.log("CAROSELLO IMMAGINI");
-// recupero foto
-let immagini = [
-  "../img/img1.jpg",
-  "../img/img2.jpg",
-  "../img/img3.jpg",
-  "../img/img4.jpg",
-  "../img/img5.jpg",
+console.log("Ciao Cianuro... Oggi l'esercizio è CAROSELLO ");
+
+//********************
+// CREO ARRAY DI FOTO
+//******************** */
+let foto = [
+  "./img/img1.jpg",
+  "./img/img2.jpg",
+  "./img/img3.jpg",
+  "./img/img4.jpg",
+  "./img/img5.jpg",
 ];
 
-// RECUPERARE CAROSELLO DAL DOM
-let carosello = document.getElementById("carosello");
+let indiceFotoAttuale = 0;
+
+//********************
+// RECUPERO DAL DOM IL CAROSELLO
+//******************** */
+const carosello = document.getElementById("carosello");
 console.log(carosello);
 
-console.log(immagini);
-const frecciaDxElement = document.getElementById("freccia-destra");
-const frecciaSnElement = document.getElementById("freccia-sinistra");
-console.log(frecciaDxElement, frecciaSnElement);
+//********************
+// CICLO LE FOTO E LE INSERISCO DINAMICAMENTE NEL DOM
+//******************** */
+for (let i = 0; i < foto.length; i++) {
+  const img = foto[i];
+  console.log(img);
 
-// indice foto attiva
-let indiceFotoSelected = 0;
+  let nomeClasse = "slide";
+  if (i === indiceFotoAttuale) {
+    nomeClasse += " selected";
+  }
 
-// recuperato le 2 frecce
-console.log(indiceFotoSelected);
-// scorri foto al click destro
-const fotoElements = document.getElementsByClassName("foto");
+  const htmlFoto = `
+    <div class="${nomeClasse}">
+      <img src="${img}" alt="">
+    </div>
+  `;
+
+  carosello.innerHTML += htmlFoto;
+}
+
+//********************
+// RECUPERO LE FOTO DAL CAROSELLO
+//******************** */
+let fotoElements = document.querySelectorAll(".carosello .slide");
 console.log(fotoElements);
 
-// FRECCIA DX
+//********************
+// RECUPERO FRECCE DAL DOM
+//******************** */
+const frecciaSnElement = document.getElementById("freccia-sn");
+const frecciaDxElement = document.getElementById("freccia-dx");
+
+console.log(frecciaSnElement, frecciaDxElement);
+
+//********************
+// ADD EVENT LISTENER FRECCIA DESTRA
+//******************** */
 frecciaDxElement.addEventListener("click", function () {
-  // if (indiceFotoSelected < lastIndex) {
-  let lastIndex = fotoElements.length - 1;
+  console.log("FOTO SUCCESSIVA");
+  console.log(indiceFotoAttuale);
 
-  let fotoAttuale = fotoElements[indiceFotoSelected];
-  fotoAttuale.classList.remove("selected");
+  const lastIndex = fotoElements.length - 1;
 
-  if (indiceFotoSelected < lastIndex) {
-    indiceFotoSelected += 1;
+  console.log(fotoElements[indiceFotoAttuale]);
+  fotoElements[indiceFotoAttuale].classList.remove("selected");
+
+  if (indiceFotoAttuale < lastIndex) {
+    indiceFotoAttuale += 1;
   } else {
-    indiceFotoSelected = 0;
+    indiceFotoAttuale = 0;
   }
 
-  let prossimaFoto = fotoElements[indiceFotoSelected];
-  prossimaFoto.classList.add("selected");
-  console.log("prossima foto", indiceFotoSelected);
-
-  // }
-  // CHIUSURA CLICK DX
+  console.log(fotoElements[indiceFotoAttuale]);
+  fotoElements[indiceFotoAttuale].classList.add("selected");
 });
+//  FINE ADD EVENT LISTENER FRECCIA DESTRA
 
-// FRECCIA SN
+//********************
+// ADD EVENT LISTENER FRECCIA SINISTRA
+//******************** */
+
 frecciaSnElement.addEventListener("click", function () {
-  // if (indiceFotoSelected > 0) {
-  let lastIndex = fotoElements.length - 1;
+  console.log("FOTO PRECEDENTE");
 
-  let fotoAttuale = fotoElements[indiceFotoSelected];
-  fotoAttuale.classList.remove("selected");
+  console.log(fotoElements[indiceFotoAttuale]);
+  fotoElements[indiceFotoAttuale].classList.remove("selected");
 
-  if (indiceFotoSelected > 0) {
-    indiceFotoSelected--;
+  if (indiceFotoAttuale > 0) {
+    indiceFotoAttuale--;
   } else {
-    indiceFotoSelected = lastIndex;
-    console.log(lastIndex);
+    indiceFotoAttuale = fotoElements.length - 1;
   }
 
-  // indiceFotoSelected -= 1;
-  let prossimaFoto = fotoElements[indiceFotoSelected];
-  prossimaFoto.classList.add("selected");
-  console.log("foto precedente", indiceFotoSelected);
-  // BLOCCO SCORRIMENTO SN
-  // }
-  // CHIUSURA CLICK SN
+  console.log(fotoElements[indiceFotoAttuale]);
+  fotoElements[indiceFotoAttuale].classList.add("selected");
+  //  FINE ADD EVENT LISTENER FRECCIA SINISTRA
 });

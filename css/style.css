@@ -1,43 +1,39 @@
-* {
+body {
   background-color: black;
   color: white;
 }
-img {
+
+.slide img {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: center;
 }
-.foto.selected {
+
+.slide.selected {
   display: block;
-}
-.foto {
-  display: none;
-}
-.container {
-  position: relative;
-}
-.naviga-carosello {
-  position: absolute;
-  font-weight: bolder;
-  font-size: 2rem;
-  top: 50%;
-  translate y: -50%;
-  background-color: transparent;
-  cursor: pointer;
 }
 
-.freccia-destra{
-    right: 25px;
-    z-index: 999;
+.slide {
+  display: none;
 }
-.freccia-sinistra{
-    left: 25px;
-    z-index: 998;
+
+.carosello {
+  position: relative;
 }
-#freccia-sinistra.stop, #freccia-destra.stop{
- display: none;
+
+.carosello .freccia-carosello {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
 }
-#freccia-sinistra.go, #freccia-destra.go{
-  display: block;
- }
+
+.carosello .freccia-carosello.freccia-sn {
+  left: 20px;
+}
+
+.carosello .freccia-carosello.freccia-dx {
+  right: 20px;
+}
